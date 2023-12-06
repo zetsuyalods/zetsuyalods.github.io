@@ -1,0 +1,1546 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <style>
+        @media screen and (max-width: 700px){
+          header{
+              min-height: 500px;
+              display: inline-block;
+          }
+        }
+
+        body {
+          margin: 0px;
+          padding: 0px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-weight: 200;
+        }
+        
+        nav {
+          background: linear-gradient(to right, #FF795C, #FF9D89, #FFA896, #FFBDAF);
+        }
+
+        .yoasobi1 {
+          height: 100vh;
+          width: 100%;
+          background-image: url(img/Gunjou.jpg);
+          background-size: cover;
+          background-position: center;
+          display: table;
+          background-attachment: fixed;
+          z-index: -1;
+        }
+
+        .yoasobi2 {
+          height: 100vh;
+          width: 100%;
+          background-image: url(img/yoru\ ni\ kakeru.jpg);
+          background-size: cover;
+          background-position: center;
+          display: table;
+          background-attachment: fixed;
+          z-index: -1;
+        }
+
+        .yoasobi3 {
+          height: 100vh;
+          width: 100%;
+          background-image: url(img/loveletter.jpg);
+          background-size: cover;
+          background-position: center;
+          display: table;
+          background-attachment: fixed;
+          z-index: -1;
+        }
+
+        .yoasobi4 {
+          height: 100vh;
+          width: 100%;
+          background-image: url(img/idol.jpg);
+          background-size: cover;
+          background-position: center;
+          display: table;
+          background-attachment: fixed;
+          z-index: -1;
+        }
+
+        .yoasobi5 {
+          height: 100vh;
+          width: 100%;
+          background-image: url(img/Kaibutsu.webp);
+          background-size: cover;
+          background-position: center;
+          display: table;
+          background-attachment: fixed;
+          z-index: -1;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        .slide {
+          height: 100%;
+          width: 200px;
+          position: fixed;
+          background-color: #fff;
+          transition: 0.5s ease;
+          transform: translateX(-500px);
+          z-index: 1;
+          background: linear-gradient(#FF9D89, #FF9D89,#FFBDAF);
+        }
+        .slide h1 {
+          color: #fff;
+          font-weight: 800;
+          text-align: center;
+          padding: 10px 0;
+          padding-right: 30px;
+          pointer-events: none;
+          margin: 50px;
+          padding-left: 48px;
+          background: linear-gradient();
+        }
+        ul li {
+          list-style-type: none;
+        }
+        ul li a {
+          color: #011a41;
+          font-weight: 500;
+          display: flex;
+          text-decoration: none;
+          z-index: 2;
+          width: 200px;
+          margin-right: 30px;
+          margin-bottom: 0px;
+        }
+
+        ul li a i {
+          width: 10px;
+          text-align: center;
+        }
+        input {
+          display: none;
+          visibility: hidden;
+          /* -webkit-appearance: none; */
+        }
+        .toggle {
+          position: fixed;
+          height: 30px;
+          width: 30px;
+          top: 17px;
+          left: 15px;
+          z-index: 2;
+          cursor: pointer;
+          border-radius: 2px;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .toggle .common {
+          position: absolute;
+          height: 2px;
+          width: 20px;
+          background-color: #8000ff;
+          border-radius: 50px;
+          transition: 0.3s ease;
+        }
+        .toggle .top_line {
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .toggle .middle_line {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .toggle .bottom_line {
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        input:checked ~ .toggle .top_line {
+          left: 2px;
+          top: 14px;
+          width: 25px;
+          transform: rotate(45deg);
+        }
+        input:checked ~ .toggle .bottom_line {
+          left: 2px;
+          top: 14px;
+          width: 25px;
+          transform: rotate(-45deg);
+        }
+        input:checked ~ .toggle .middle_line {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        input:checked ~ .slide {
+          transform: translateX(-228px);
+          box-shadow: 0 0 15px rgba(0,0,0,0.5);
+          z-index: 1;
+          position: fixed;
+          align-items: start;
+        }
+        h1 {
+          font-family: sans-serif;
+          font-size: 48px;
+          color: #fff;
+          margin: 0px;
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+        }
+        video {
+          margin: 60px;
+          margin-left: 45%;
+          width: 50%;
+          height: 50vh;
+          align-items: center;
+          transform: translate(0%, -160%);
+          position: absolute;
+        }
+        .yoasobi3 video {
+          margin: 60px;
+          margin-left: 45%;
+          width: 50%;
+          height: 50vh;
+          align-items: center;
+          transform: translate(0%, -190%);
+        }
+        .yoasobi2 video {
+          margin: 60px;
+          margin-left: 45%;
+          width: 50%;
+          height: 50vh;
+          align-items: center;
+          transform: translate(0%, -280%);
+        }
+        .yoasobi4 video {
+          margin: 60px;
+          margin-left: 45%;
+          width: 50%;
+          height: 50vh;
+          align-items: center;
+          transform: translate(0%, -260%);
+        }
+
+        .card-header {
+          padding: 2px;
+          margin: 50px;
+          margin-left: 4px;
+          margin-top: 2px;
+        }
+
+        .yoasobi1 .scrollspy {
+          width: 555px;
+          margin: 40px;
+          border-radius: 27px;
+          transform: translate(0%, 0%);
+          background: linear-gradient(#313EFF, #6E77FF, #fff);
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .yoasobi2 .scrollspy {
+          width: 555px;
+          margin: 40px;
+          border-radius: 27px;
+          transform: translate(0%, 0%);
+          background: linear-gradient(#F57171, #2895F4);
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .yoasobi3 .scrollspy {
+          width: 555px;
+          margin: 40px;
+          border-radius: 27px;
+          transform: translate(0%, 0%);
+          background: linear-gradient(#FD9E67, #6E77FF, #fff);
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .yoasobi4 .scrollspy {
+          width: 555px;
+          margin: 40px;
+          border-radius: 27px;
+          transform: translate(0%, 0%);
+          background: linear-gradient(#441D6B, #E848FE, black);
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .yoasobi5 .scrollspy {
+          width: 555px;
+          margin: 40px;
+          border-radius: 27px;
+          transform: translate(0%, 0%);
+          background: linear-gradient(black, red, black);
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .section {
+          width: 500px;
+          margin: 50px;
+          transform: translate(0%, 0%);
+          background: repeating-linear-gradient(#313EFF, #6E77FF, #fff);
+          overflow-y: auto;
+          overflow-x: visible;
+          border-radius: 27px;
+          height: 100vh;
+          text-align: right;
+        }
+        .tabs {
+          width: 560px;
+          height: 7vh;
+          padding: 0px;
+          margin: 0px;
+          bottom: 1px;
+          right: 15px;
+          display: flex;
+          overflow-x: hidden;
+        }
+        .tabs .indicator{
+          background-color: #1a237e;
+          width: 200pxpx;
+        }
+        .tabs .tab a:focus, .tabs .tab a:hover.active{
+          background: transparent;
+        }
+        .scrollspy {
+          margin: 50px;
+          padding: 0;
+          padding-left: 0;
+        }
+        .scrollspy .row {
+          overflow-x: hidden;
+        }
+        .scrollspy div p {
+          width: 320px;
+          text-align: center;
+          margin-left: 40%;
+        }
+        p {
+          width: 500px;
+          text-align: justify;
+        }
+        .btn {
+          border-radius: 27px;
+          margin: 10px;
+          padding: 1px;
+          transform: translate(90%, 0%);
+          width: 140px;
+          height: 38px;
+          }
+    </style>
+    <title>Yoasobi</title>
+
+
+<head></head>
+<body>
+    <header>
+        <nav class="nav-wrapper">
+          <div class="container">
+            <a href="#" class="brand-logo">My Top 5 Yoasobi songs</a>
+            </a>
+            <ul>
+            <label>
+              <input type="checkbox">
+              <div class="toggle hide-on-med-and-down">
+                <span class="top_line common"></span>
+                <span class="middle_line common"></span>
+                <span class="bottom_line common"></span>
+              </div>
+              <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                  <li><a href="indexpt.html">Home</a></li>
+                  <li><a href="#Gunjou">Gunjou</a></li>
+                  <li><a href="#Yoru ni Kakeru">Yoru ni Kakeru</a></li>
+                  <li><a href="#Love Letter">Love Letter</a></li>
+                  <li><a href="#Idol">Idol</a></li>
+                  <li><a href="#Kaibutsu">Kaibutsu</a></li>
+                </ul>
+              </div>
+            </label>
+          </div>
+        </nav>
+    </header>
+
+    <div class="yoasobi1">
+      <section class="section container scrollspy" id="Gunjou">
+        <div class="row">
+          <div class="col s12 l6 offset-1">
+            <!-- tabs -->
+            <ul class="tabs">
+              <li class="tab col s6">
+                <a href="#story" class="active indigo-text text-darken-4">Story</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#romaji" class="active indigo-text text-darken-4">Romaji Lyrics</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#english" class="indigo-text text-darken-4">English Lyrics</a>
+              </li>
+            </ul>
+            <div id="story" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Gunjou</p>
+                <p class="flow-text text-darken-4">Inspired by Tsubasa Yamaguchi's manga Blue Period and based on a story text Ao o Mikata ni, the song is described as "a cheering song that inspires listeners by immersing themselves in what they like and expressing what they see.</p>
+            </div>
+            <div id="romaji" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Editing</p>
+                <p>
+                  <span>[Verse 1]</span>
+                  <br>
+                  Ah, itsumo no you ni
+                  Sugiru hibi ni akubi ga deru
+                  Sanzameku yoru, koe, kyou mo
+                  Shibuya no machi ni asa ga furu
+                  Dokoka munashii you na
+                  Sonna kimochi tsumaranai na
+                  Demo sore de ii sonna mon sa kore de ii
+                          </p>
+                          <p>
+                  <span>[Refrain]</span>
+                  <br>
+                  Shirazu shirazu kakushiteta
+                  Hontou no koe wo hibikasete yo, hora
+                  Minai furi shiteitemo
+                  Tashika ni soko ni aru
+                </p>
+                <p>
+                  <span>[Chorus]</span>
+                  <br>
+                  Ah, kanjita mama ni egaku
+                  Jibun de eranda sono iro de
+                  Nemui kuuki matou asa ni
+                  Otozureta aoi sekai
+                  Suki na mono wo suki da to yuu
+                  Kowakute shikatanai kedo
+                  Hontou no jibun
+                  Deaeta ki ga shitan da
+                </p>
+                <p>
+                  <span>[Verse 2]</span>
+                  <br>
+                  Ah, te wo nobaseba nobasu hodo ni
+                  Tooku e yuku
+                  Omou you ni ikanai, kyou mo
+                  Mata awatadashiku mogaiteru
+                  Kuyashii kimochi mo tada nasakenakute
+                  Namida ga deru fumikomu hodo
+                  Kurushiku naru itaku mo naru
+                </p>
+                <p>
+                  <span>[Chorus]</span>
+                  <br>
+                  Ah, kanjita mama ni susumu
+                  Jibun de eranda kono michi wo
+                  Omoi mabuta kosuru yoru ni
+                  Shigamitsuita aoi chikai
+                  Suki na koto wo tsuzukeru koto
+                  Sore wa ”tanoshii” dake janai
+                  Hontou ni dekiru? Fuan ni naru kedo
+                </p>
+                <p>
+                  <span>[Verse 3]</span>
+                  <br>
+                  Ah, nanmai demo, hora nanmai demo
+                  Jishin ga nai kara egaitе kitan da yo
+                  Ah, nankai demo, hora nankai demo
+                  Tsumiagetе kita koto ga buki ni naru
+                  Mawari wo mitatte dare to kurabe tatte
+                  Boku ni shika dekinai koto wa nanda
+                  Ima demo jishin nanka nai soredemo
+                </p>
+                <p>
+                  <span>[Bridge]</span>
+                  <br>
+                  Kanjita koto nai kimochi
+                  Shirazu ni ita omoi
+                  Ano hi fumidashite
+                  Hajimete kanjita kono itami mo zenbu
+                  Suki na mono to mukiau koto de
+                  Fureta mada chiisana hikari
+                  Daijoubu, ikou, ato wa tanoshimu dake da
+                </p>
+                <p>
+                  <span>[Chorus]</span>
+                  <br>
+                  Ah, subete wo kakete egaku
+                  Jibun ni shika dasenai iro de
+                  Asa mo yoru mo hashiri tsuzuke
+                  Mitsukedashita aoi hikari
+                  Suki na mono to mukiau koto
+                  Ima datte kowai koto dakedo
+                  Mou ima wa ano hi no toumei na boku janai
+                  Ah, ari no mama no
+                  Kakegae no nai boku da
+                </p>
+                <p>
+                  <span>[Refrain]</span>
+                  <br>
+                  Shirazu shirazu kakushiteta
+                  Hontou no koe wo hibikasete yo, hora
+                  Minai furi shiteitemo
+                  Tashika ni soko ni ima mo soko ni aru yo
+                  Shirazu shirazu kakushiteta
+                  Hontou no koe wo hibikasete yo, saa
+                  Minai furi shiteitemo
+                  Tashika ni soko ni kimi no naka ni
+                </p>
+                          </p>
+            </div>
+            <div id="english" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Blue</p>
+                <p>
+                Ah, like every day I see
+                Another day repeats, I'm yawning all the time
+                After all the cheers, the night, it fades out and
+                Shibuya receives a pour of the morning light
+                And somehow, an emptiness surrounds
+                </p>
+                <br>
+                <p>
+                That's what I always feel
+                Something is not enough
+                That's how it's gonna be
+                It's all a part of life
+                I'll let this be
+                </p>
+                <br>
+                <p>
+                See what, see what, covered deep inside
+                Let us hear the voice in you, and resonate in you, hold on
+                Pretending won't bring it out of sight
+                It is always waiting there for you
+                </p>
+                <br>
+                <p>
+                Calling followed, what I feel's to be drawn
+                Going by my selection in this color, thеn
+                Suddenly, with the breeze of a drowsy morning
+                Thеre was a world of blue shown in front of me
+                Liking what you believe in and saying that you do
+                Can be too terrifying, but I know
+                I've finally come across a true discovery of what I got
+                </p>
+                <br>
+                <p>
+                Ah, the more that I reach out my hands to what I need
+                The further it becomes
+                Another one of these unruly days go on
+                I'm always in a hurry as I'm struggling
+                </p>
+                <br>
+                <p>
+                Misery, stemming from all my thoughts
+                Humiliation brings new tears into my view
+                The more that I step in, the harder it becomes
+                Even the pain renews
+                </p>
+                <br>
+                <p>
+                Calling followed, what I feel is the move
+                Going by my selection in this path I walk
+                On a night fighting off eyelids dropping heavy
+                I'm grabbing tight, the blue vow in front of me
+                Taking what you believe and to keep doing so
+                Every step's not only fun all the time
+                Don't know if I'm able, cause I am worried a little
+                </p>
+                <br>
+                <p>
+                Ah, one line was drawn
+                Every one line was drawn
+                Missing inner confidence, I've drawn all pages I could draw
+                Ah, one time becomes
+                Every one time becomes
+                </p>
+                <br>
+                <p>
+                Soon, a large accumulation of a strength inside of you
+                All around, I look at them
+                Comparing what I do with them
+                What is it only I can do that nobody else can?
+                Even if I've got no true confidence, I'm moving on
+                </p>
+                <br>
+                <p>
+                Covered in thoughts and emotion within
+                Unknown to me, a brand new feeling
+                And, on the day I took the step for the first time
+                Including even this, new pain that I felt too
+                </p>
+                <br>
+                <p>
+                Liking what I believe in and facing it led
+                To a touch of the preview of a light
+                Gonna be alright, let us go
+                All I can do now is to have the fun
+                </p>
+                <br>
+                <p>
+                Everything is on the line as I draw
+                Using my own unique usage of colors and
+                Every dawn, every night, I would keep on running
+                And now I found the blue glowing light on me
+                </p>
+                <br>
+                <p>
+                Liking what you believe in and facing it too
+                Can be still terrifying but now I know
+                No longer am I these versions of me living in transparency
+                Now I know how to be my precious incomparable new self
+                </p>
+                <br>
+                <p>
+                See what, see what, covered deep inside
+                Let us hear the voice in you, and resonate in you, hold on
+                Pretending won't bring it out of sight
+                It is always waiting there, still always waiting there for you and
+                </p>
+                <br>
+                <p>
+                See what, see what, covered deep inside
+                Let us hear the voice in you, and resonate in you, hold on
+                Pretending won't bring it out of sight
+                It is always waiting there, waiting inside of you
+                </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <video class="responsive-video" controls>
+        <source src="video/Gunjou.mp4">
+      </video>
+    </div>
+
+    <div class="yoasobi2">
+      <section class="section container scrollspy" id="Yoru ni Kakeru">
+        <div class="row">
+          <div class="col s12 l6 offset-1">
+            <!-- tabs -->
+            <ul class="tabs">
+              <li class="tab col s6">
+                <a href="#story1" class="active indigo-text text-darken-4">Story</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#romaji1" class="active indigo-text text-darken-4">Romaji Lyrics</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#english1" class="indigo-text text-darken-4">English Lyrics</a>
+              </li>
+            </ul>
+            <div id="story1" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Yoru ni Kakeru</p>
+                <p class="flow-text text-darken-4">The song is based on an original short story by Mayo Hoshino titled "Thanatos no yuuwaku" that depicts the fleeting romance between the first-person narrator, presumably a young man, and the woman he loves who repeatedly tries to kill himself. The song is about two people escaping the darkness together, and the lyrics describe how the narrator's feelings for the person they are singing about kept growing.</p>
+            </div>
+            <div id="romaji1" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Yoru ni Kakeru</p>
+                <p>[INTRO]
+                  Shizumu you ni tokete yuku you ni
+                  Futaridake no sora ga hirogaru yoru ni
+                  </p>
+                  <p>[VERSE]
+                    <br>
+                  Sayonara dakedatta
+                  Sono hitokoto de subete ga wakatta
+                  Higa shizumi dashita sora to kimi no sugata
+                  FENSUgoshi ni kasanatte ita
+                  </p> <br>
+                  <p>Hajimeta atta hi kara
+                  Boku no kokoro no subete wo ubatta
+                  Doko ka hakanai kuuki wo matou kimi wa
+                  Sabishii me wo shiteta nda
+                  </p>
+                  <p>[PRE-Chorus] <br>
+                  Itsu datte CHIKKUTAKKU to
+                  Naru sekai de nando datte sa
+                  Fureru kakaronai kotoba urusai koe ni
+                  Namida ga kobore sou demo
+                  Arikitarina yorokobi kitto futarinara mitsuke rareru
+                  </p>
+                  <p>[Chorus] <br>
+                  Sawagashii hibi ni waraenai kimi ni
+                  Omoitsuku kagiri mabushii asu wo
+                  Akenai yoru ni ochite yuku mae ni
+                  Boku no te wo tsukan de hora
+                  Wasurete shimaitakute tokikometa hibi mo
+                  Dakishimeta nukumori de tokasukara
+                  Kowakunai yo itsuka higanoboru made
+                  Futari de iyou
+                  </p>
+                  <p>[VERSE] <br>
+                  Kimi ni shika mienai
+                  Nanika wo mitsumeru kimi ga kiraida
+                  Mitorete iru ka no youna koi suru youna
+                  Sonna kao ga kiraida
+                  </p>
+                  <p>Shinjite itaikеdo shinji renai koto
+                  Sonna no dou shitatte kitto
+                  Korekara dattе ikutsu mo atte
+                  Sono tanbi okotte naite iku no
+                  Soredemo kitto itsuka wa kitto okura wa kitto
+                  Wakari aerusa shinjiteru yo
+                  </p>
+                  <p>[BRIDGE]
+                    <br>
+                  Mou iya datte tsukareta n datte
+                  Gamushara ni sashinobeta boku no te wo furiharau kimi
+                  Hontou wa boku mo iitai nda
+                  </p>
+                  <p>[PRE-Chorus] <br>
+                  Hora mata CHIKKUTAKKU to
+                  Naru sekai de nando datte sa
+                  Kimi no tame ni yooi shita kotoba dore mo todokanai
+                  Owari ni shitai da nante sa
+                  Tsura rete kotoba ni shita toki
+                  Kimi wa hajimete waratta
+                  </p>
+                  <p>[Chorus] <br>
+                  Sawagashii hibi ni waraenaku natte ita
+                  Boku no meniutsuru kimi wa kireida
+                  Akenai yoru ni koboruta namida mo
+                  Kimi no egao ni tokete iku
+                  </p>
+                  <p>[OUTRO] <br>
+                  Kawaranai hibi ni naiteita boku o
+                  Kimi wa yasashiku owari e to sasou
+                  Shizumu you ni tokete yuku you ni
+                  Shimitsuita kiri ga hareru
+                  Wasurete shimaitakute tojikometa hibi ni
+                  Sashinobete kureta kimi no te o toru
+                  Suzushii kaze ga sora o oyogu you ni ima fukinukete iku
+                  Futari ima, yoru ni kakedashite iku
+                  </p>
+            </div>
+            <div id="english1" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Racing into the Night</p>
+                <p>[Intro]
+              Seize a move, you're on me
+              Falling, and we were dissolving
+              You and me, skies above and wide
+              It brings on the true night on me
+              </p>
+              <br>
+              <p>
+              [Verse 1]
+              All I could feel was a "goodbye"
+              Those only words you wrote, it's plenty to understand ya
+              The sun is going down, the sky behind and
+              Visions of you would stand
+              Overlapping with you and the fence beyond
+              Remember the night that we met up?
+              Broke into me and taken everything left in my heart
+              So fragile, is that air, it always keeps on rеvolving near and wide
+              Lonelinеss envelops deep in your eyes
+              </p>
+              <br>
+              <p>
+              [Pre-Chorus]
+              It's stuck in "tick-and-tocking" mode
+              Never refraining shamble, block of sound
+              Too many terrible noises around
+              And the voice ringing in me gets louder
+              With tears about to fall
+              I need to find me an average happy tiptoe
+              Locating, never tough when I'm with you
+              </p>
+              <br>
+              <p>
+              [Chorus]
+              Saw what got seen hid beneath, and louder nights keep beating
+              I'm going to you, and giving brighter shiny tomorrows
+              What can "night" for you mean, infinite? You could run with me
+              Place your hand in mine, you gotta stay, hold up
+              Want to leave it behind, dark cruel days
+              In deep, you may have hid before
+              I'm embracing you until more heat dissolve what is caught up
+              Sun will soon rise up into a day you're no more too afraid
+              Keep all of me in you
+              </p>
+              <br>
+              <p>
+
+              [Verse 2]
+              Only perceiving through your eyes
+              I see nothing, I'll soon hate you, keep me out, I'm crying out
+              You're falling into deeper fascination, givin' away your love
+              That expression has got me crying out
+              </p>
+              <br>
+              <p>
+              [Verse 3]
+              She's gonna try to me, she's gonna lie
+              Got to force a belief and trust to keep on
+              Every time it happens, heap of attack, and now I'm back in
+              I got to cry, then who knows?
+              So we gotta keep on, if you gotta keep on
+              Then we're gonna keep on
+              One day, we will understand, I'm believin' in you
+              [Bridge]
+              "No, wanna stop it, but you got me tired of walking"
+              As I show my needs, I reach to get back on, still not fit in
+              You free my hand, then leave it
+              "No, wanna stop it, you got me tired of walking"
+              Never told you the truth, I'm feeling that inside
+              </p>
+              <br>
+              <p>
+              [Pre-Chorus]
+              Back for another "tick-and-tocking" mode
+              Never refraining shamble, block of sound
+              Killing, oh, too many words that I gathered around
+              Won't let me go to your mind
+              "I want it to be done" is what went out
+              It found a way to finally leak out of me
+              And for once, I could make you let out a smile
+              </p>
+              <br>
+              <p>
+              [Chorus]
+              Saw what got seen hid beneath, and louder nights are keeping me down
+              My new images of you, now, appear heavenly now
+              What can "night" for you mean when fallen seas of tears are gone?
+              They dissolve into the peace inside of you, oh
+              Calling to life, hit beneath, crying days in the eternal
+              Give me what I saw in you, oh, what an end to stop all
+              Seize a move, you're on me, falling and we were dissolving
+              See me to it, fog is leaving, bright air move
+              Want to leave it behind, tucked all days away, forget, and hid beneath
+              Hand in hand, extend to me, that let me know beyond falls
+              Through the seas of beyond, so loud and blows you afloat in the sky
+              New wind moving into you
+              </p>
+              <br>
+              <p>
+              [Outro]
+              Tonight, don't ever lose sight of me and let go
+              You and me are running through the night in dark, I'll take you
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+      <video class="responsive-video" controls>
+        <source src="video/yoru ni kakeru.mp4">
+      </video>
+    </div>
+
+    <div class="yoasobi3">
+      <section class="section container scrollspy" id="Love Letter">
+        <div class="row">
+          <div class="col s12 l6 offset-1">
+            <!-- tabs -->
+            <ul class="tabs">
+              <li class="tab col s6">
+                <a href="#story2" class="active indigo-text text-darken-4">Story</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#romaji2" class="active indigo-text text-darken-4">Romaji Lyrics</a>
+              </li>
+              <li class="tab col s6">
+                <a href="#english2" class="indigo-text text-darken-4">English Lyrics</a>
+              </li>
+            </ul>
+            <div id="story2" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">Love letter</p>
+              <p class="flow-text">
+                On August 30, 2020, Sunday's Post, Tokyo FM's radio show owned by Japan Post Service, announced a collaborative contest with Yoasobi called Letter Song Project to perform a song based on a letter written by listener about thoughts or expectations under the theme "thank you". The winner was announced on July 25, 2021, as sixth-grade student Hatsune's letter, titled Ongaku-san e (音楽さんへ, lit. "To Music"), which spells out gratitude for music.
+              </p>
+            </div>
+            <div id="romaji2" class="col s12">
+              <p class="flow-text indigo-text text-darken-4">Love Letter</p>
+              <p>
+                Hajimemashite daisukina ongaku e
+                Zutto kangaeteta koto
+                Douka kiite hoshikutte
+                (Tsutaetai koto ga arundesu)
+                Chotto terekusai keredo
+                Zutto omotteita koto
+                Konna wo tegami ni komete
+                (Todoitekuremasu you ni)
+                </p>
+                <br>
+                <p>
+                Donna toki mo anata no
+                Kotoba, koe wo kiiteiru dake de
+                Chikara ga waitekurunda
+                </p>
+                <br>
+                <p>
+                Nee
+                Waratteitai yo donna toki mo
+                Demo tsurai kurai itai hi mo aru
+                Kedo ne
+                Anata ni fureru dake de kizukeba
+                Kono sekai ga iroazayaka ni naru
+                Hana ga saku you ni
+                Waratte naite donna toki datte
+                Erande iinda itsu demo jiyuu ni
+                Kyou wa donna anata ni deaeru kana
+                Kono sekai ga owaru sono hi made
+                Naritsuzuketeite
+                </p>
+                <br>
+                <p>
+                Itsumo anata no koto wo motomechaunda
+                (Odoridashitaku naru toki mo)
+                (Bakuhatsushichaisou na toki mo)
+                Sukuwaretanda sasaeraretekitanda
+                (Kokoro ga ugokasarerundesu)
+                (Kokoro ga mitasareteikundesu)
+                Nee motto fureteitai yo
+                Zutto soba ni ite hoshii yo
+                Itsumade mo
+                Daisuki na anata ga
+                Hibiiteimasu you ni
+                </p>
+                <br>
+                <p>
+                Konna takusan no kimochi
+                Gyutto tsumekonda omoi
+                Chanto tsutaerareta kana
+                Chotto dake fuan da kedo
+                Kitto todoitekureta yo ne
+                Zenbu watashi no sunao na kotoba da kara
+                Moshimo anata ni deaetenakattara nante
+                Omou dake de kowai hodo daisuki nanda
+                </p>
+                <br>
+                <p>
+                Uketotte douka atashi no omoi wo
+                Saa
+                Waratte naite sonna mainichi wo
+                Aruiteikunda itsumo itsumade mo
+                Tsurai kurai itai koto mo takusan aru kedo
+                Kono sekai wa itsu demo doko demo ongaku de afureteru
+                Me no mae no koto mo shourai no koto mo
+                Fuan ni natte dou shitara ii no
+                Wakannakutte mayou koto mo aru kedo
+                Sonna toki mo kitto anata ga itekurereba
+                Mae wo mukerunda
+                </p>
+                <br>
+                <p>
+                Konna kimochi ni naru no wa
+                Konna omoi ga dekiru no wa
+                Kitto ongaku dake nanda
+                (Gawari nante hitotsu mo naindesu)
+                Douka sennen saki mo
+                Douka nari yamanaide
+                Itsumo hontou ni arigatou
+                </p>
+          </div>
+            <div id="english2" class="col s12">
+                <p class="flow-text indigo-text text-darken-4">English</p>
+                <p>
+                It's a pleasure to meet you, my beloved Music
+                What I've been thinking about all this time
+                I want you to hear it somehow
+                (I have something I want to tell you)
+                I'm a bit embarrassed about it, but
+                What I've been thinking about all this time
+                I've put it all into this letter
+                (May it make its way towards you)
+                </p>
+                <br>
+                <p>
+                No matter when, your
+                Words, I'll only listen to your voice
+                As the power surges through me
+                </p>
+                <br>
+                <p>
+                Hey
+                I want to smile! No matter when
+                But there are still days, tough, dark, and painful
+                But you know, ...
+                I'll only experience you, and once I realize it,
+                This world will become vividly colored
+                As the flowers bloom
+                Smiling, crying, whenever it may be
+                Being able to always choose freely
+                I wonder what kind of "you" I'll meet today
+                Until that day when the world ends
+                Keep resounding
+                </p>
+                <br>
+                <p>
+                Always ending up wanting more of you
+                (Even when it makes me want to break into a dance)
+                (Even when it seems like I'll explode)
+                Saved and sustained by you
+                (You make my heart move)
+                (You make my heart full)
+                Hey, I want to experience you more
+                I want you to be my side all the way
+                Forever
+                You, my beloved
+                May you continue resounding
+                </p>
+                <br>
+                <p>
+                With this many feelings
+                The thoughts pent up inside me
+                I wonder if it was conveyed clearly
+                I'm just a bit anxious, but
+                It'll surely make its way towards you, right?
+                All of it, just my honest words, so
+                If can't see you, then
+                Just thinking about it, it's so scary that I love you
+                </p>
+                <br>
+                <p>
+                Please accept these thoughts inside me
+                Come now
+                Every day full of smiles and tears
+                I'll keep walking forward, always, forever
+                With a good deal of tough, dark, and painful moments, yet
+                This world, whenever, wherever, floods with music
+                Before my eyes, in the near future
+                Growing anxious, what should I do?
+                With moments where I unknowingly get lost, yet
+                Even then, if you're there for me
+                I can go forward
+                </p>
+                <br>
+                <p>
+                The one that makes someone feel like this
+                The one that can make someone think like this
+                Surely, it's only you, Music
+                (There isn't a single replacement for it)
+                Please, even 1000 years from now
+                Please, don't stop resounding
+                Always, truly, thank you
+                </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+      <video class="responsive-video" controls>
+        <source src="video/love letter.mp4">
+      </video>
+    </div>
+
+      <div class="yoasobi4">
+        <section class="section container scrollspy" id="Idol">
+          <div class="row">
+            <div class="col s12 l6 offset-1">
+              <!-- tabs -->
+              <ul class="tabs">
+                <li class="tab col s6">
+                  <a href="#story3" class="active indigo-text text-darken-4">Story</a>
+                </li>
+                <li class="tab col s6">
+                  <a href="#romaji3" class="active indigo-text text-darken-4">Romaji Lyrics</a>
+                </li>
+                <li class="tab col s6">
+                  <a href="#english3" class="indigo-text text-darken-4">English Lyrics</a>
+                </li>
+              </ul>
+              <div id="story3" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Idol</p>
+                  <p class="flow-text white-text text-darken-4">serving as the opening theme of the Japanese anime series Oshi no Ko. Written by Ayase and based on Aka Akasaka's short story "45510", "Idol" is a pop track with hip-hop elements, depicting the two-faced nature of a star in the Japanese idol industry, as well as perspectives on the anime's character Ai Hoshino from her fans, her B-Komachi's bandmates, and herself.</p>
+              </div>
+              <div id="romaji3" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Idol</p>
+                  <p class="white-text">
+                  [Intro: ikura & REAL AKIBA BOYZ]
+                Muteki no egao de arasu media
+                Shiritai sono himitsu misuteriasu
+                Nuketeru toko sae kanojo no eria
+                Kanpeki de usotsuki na kimi wa
+                Tensaitekina aidoru sama
+                (You're my savior, you're my saving grace)
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Verse 1: ikura]
+                Kyou nani tabeta? Suki na hon wa?
+                Asobi ni iku nara doko ni iku no?
+                Nanimo tabetenai, sore wa naisho
+                Nani wo kikaretemo norari kurari
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Verse 2: ikura]
+                Sou tantan to, dakedo sansan to
+                Miesou de mienai himitsu wa mitsu no aji
+                Are mo nai, nai, nai
+                Kore mo nai, nai, nai
+                Suki na taipu wa? Aite wa?
+                Saa kotaete
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Pre-Chorus: ikura & REAL AKIBA BOYZ]
+                "Dareka wo suki ni naru koto nante (Hey! Hey!)
+                Watashi wakaranakute sa" (Hey! Hey!)
+                Uso ka hontou ka shirienai (Hey! Hey! Hey! Hеy!)
+                Sonna kotoba ni mata hitori ochiru (Hey! Hey! Hey! Hеy!)
+                Mata suki ni saseru
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Chorus: ikura]
+                Daremo ga me wo ubawareteiku
+                Kimi wa kanpeki de kyuukyoku no aidoru
+                Konrinzai arawarenai
+                Ichibanboshi no umarekawari
+                Ah, sono egao de aishiteru de
+                Daremo kare mo toriko ni shite iku
+                Sono hitomi ga
+                Sono kotoba ga uso demo
+                Sore wa kanzen na ai
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Verse 3: ikura]
+                Hai, hai, ano ko wa tokubetsu desu
+                Wareware wa hana kara omake desu
+                Ohoshi sama no hikitateyaku B desu
+                Subete ga ano ko no okagena wake nai
+                Sharakusai
+                Netami shitto nante nai wake ga nai
+                Kore wa neta janai
+                Kara koso yurusenai
+                Kanpeki janai
+                Kimi ja yurusenai
+                Jibun wo yurusenai
+                Dare yori mo tsuyoi
+                Kimi igai wa mitomenai
+                </p>
+                <br>
+                <p class="white-text">
+                [Chorus: ikura & REAL AKIBA BOYZ]
+                Daremo ga shinji agameteru
+                Masani saikyou de muteki no aidoru
+                Jakuten nante miataranai
+                Ichibanboshi wo yadoshiteiru
+                Yowai to konante misecha (Hey! Hey!)
+                Dame, dame (Hey! Hey!)
+                Shiritakunai toko wa misezu ni (Hey! Hey! Hey! Hey!)
+                Yuiitsumuni janakucha (Hey! Hey!)
+                Iya, iya (Hey! Hey!)
+                Sorekoso honmono no ai (Hey!)
+                </p>
+                <br>
+                <p class="white-text">
+                [Bridge: ikura]
+                Tokui no egao de wakasu media
+                Kakushikiru kono himitsu dake wa
+                Aishiteru tte uso de tsumu kyaria
+                Korekoso watashi nari no ai da
+                Nagareru ase mo kireina Aqua
+                Rubii wo kakushita kono mabuta
+                Utai odori mau watashi wa maria
+                Sou uso wa tobikiri no ai da
+                </p>
+                <br>
+                <p class="white-text">
+                [Pre-Chorus: ikura]
+                Dareka ni aisareta koto mo
+                Dareka no koto aishita koto mo nai
+                Sonna watashi no uso ga
+                Itsuka hontou ni naru koto
+                (Shinjiteru)
+                [Chorus: ikura & REAL AKIBA BOYZ]
+                Itsuka kitto zenbu te ni ireru
+                Watashi wa sou yokubarina aidoru
+                Toushindai de minna no koto
+                Chanto aishitai kara
+                Kyou mo uso wo tsuku no (Hey! Hey!)
+                Kono kotoba ga (Hey! Hey!)
+                Itsuka hontou ni naru hi wo negatte (Hey! Hey! Hey! Hey!)
+                Sore demo mada (Hey! Hey!)
+                Kimi to kimi ni dake wa iezu ni ita kedo (Hey! Hey! Hey! Hey!)
+                  </p>
+                  <br>
+                  <p class="white-text">
+                [Outro: ikura & REAL AKIBA BOYZ]
+                Ah, yatto ieta
+                Kore wa zettai uso janai
+                Aishiteru
+                (Hey! Hey! Hey! Hey!
+                Hey! Hey! Hey! Hey!
+                Hey! Hey! Hey! Hey!
+                Hey! Hey! Hey! Hey!
+                You're my savior, my true savior, my saving grace)
+                </p>
+              </div>
+              <div id="english3" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Idol English Lyrics</p>
+                  <p class="white-text">
+                  Couldn't beat her smile, it stirred up all the media
+                  Secret side, I wanna know it, so mysterious
+                  Even that elusive side, part of her controlled area
+                  Complete and perfect
+                  All you say is a bunch of lies
+                  Dear miss genius idol, unmatched
+                  (You're my savior, you're my saving grace)
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Verse 1: ikura]
+                  What did you eat today?
+                  What book do you love?
+                  Whenever you go out for fun, tell me, where do you go?
+                  Haven't eaten anything
+                  It's a secret, unknown
+                  Any questions you're facing, always acting so vaguely
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Verse 2: ikura]
+                  So unconcerned, although you brightly glow
+                  Any seemingly unveiled secrets are as sweet as honey
+                  Confusing, why, why, why?
+                  Essential lie, lie, lie
+                  So, what is your type of guy? Any partner?
+                  So, now, answer this
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Pre-Chorus: ikura & REAL AKIBA BOYZ]
+                  "I don't have any idea how I could love anyone" (Hey! Hey!)
+                  "I don't seem to know what it signifies" (Hey! Hey! Hey! Hey!)
+                  Cannot find out if it's true or it's a lie (Hey! Hey! Hey! Hey!)
+                  Once again, there's somebody who's fallen for the words and cues
+                  Made him lose his head over you
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Chorus: ikura]
+                  That emotion melts all hearts, all eyes on you
+                  'Cause you are perfect, the most ultimate idol
+                  Unrivalled, will not appear again
+                  It's the brightest star reborn, yes, indeed
+                  Ah, using that smiling face
+                  That "I love you" again
+                  Now, everybody is lured and captivated by you
+                  The pupil that you got
+                  The words you vocalize
+                  Even when untrue, it's your perfected Ai
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Verse 3: ikura]
+                  Right, right, we all know she's very special, yes
+                  We had lost the fight before it started, so impressed
+                  Miss, I'm such a star
+                  We're serving as support to her grace
+                  Cannot tell me everything was because of her
+                  No, it's not right
+                  Out of line
+                  How can we not feel jealous while being around
+                  It's not a joke, you know, right?
+                  So, I cannot forgive you for that
+                  Completely deny
+                  Imperfect you that I sight
+                  Myself, no pardon allowed
+                  I won't allow anyone if it's not you, strongest of all
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Chorus: ikura & REAL AKIBA BOYZ]
+                  That emotion seized all hearts worshipping you
+                  Yes, indeed
+                  So strong, it's you, unrivalled idol
+                  There cannot be weaknesses to find
+                  The brightest star is residing in you
+                  The gaps and shortcomings, don't show 'em
+                  Dammit, dammit (Hey! Hey!)
+                  Parts nobody wants to know should remain hidden (Hey! Hey! Hey! Hey!)
+                  One and only
+                  If it's different, no way, no way (Hey! Hey!)
+                  Such a true love, it's the realest Ai (Hey!)
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Bridge: ikura]
+                  Showing this smile, my own weapon boiling media
+                  Keeping everything about my secret deep inside
+                  "I'm in love with you," my career is built on such a lie
+                  It's the way I know to show my love, without a doubt
+                  Running down, my sweat is flowing
+                  Cleanest aqua, right?
+                  Ruby hidden under my eyelids where it resides
+                  I sing and dance around
+                  Look at me, I'm Maria
+                  So, lying surely is the greatest kind of love
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Pre-Chorus: ikura]
+                  I recall no one that loved me whole before
+                  And I've not been in love with anybody before
+                  Now, the lies I'm making up
+                  I'm hoping that a day comes when they all become true
+                  And I keep wishing they do
+                  [Chorus: ikura & REAL AKIBA BOYZ]
+                  One day, I will hold everything that I pursue
+                  Yes, I am so greedy, true voracious idol
+                  So, sincerely, what I'm wishing for is to love each of you with all my heart
+                  And so, today, I lie again (Hey! Hey! Hey! Hey!)
+                  The words I vocalize inside of me (Hey! Hey! Hey! Hey!)
+                  I'm wishing that one day they come true (Hey! Hey! Hey! Hey!)
+                  Up to this day, I've not been able to let you (Hey! Hey! Hey! Hey!)
+                  And you hear me saying those meaningful words
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  [Outro: ikura & REAL AKIBA BOYZ]
+                  I, I said it at last
+                  I know it's not a lie as I'm voicing these words
+                  I love you
+                  (Hey! Hey! Hey! Hey!
+                  Hey! Hey! Hey! Hey!
+                  Hey! Hey! Hey! Hey!
+                  Hey! Hey! Hey! Hey!
+                  You're my savior, my true savior, my saving grace)
+                  </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+        <video class="responsive-video" controls>
+          <source src="video/idol.mp4">
+        </video>
+    </div>
+
+      <div class="yoasobi5">
+        <section class="section container scrollspy" id="Monster">
+          <div class="row">
+            <div class="col s12 l6 offset-1">
+              <!-- tabs -->
+              <ul class="tabs">
+                <li class="tab col s6">
+                  <a href="#story4" class="active indigo-text text-darken-4">Story</a>
+                </li>
+                <li class="tab col s6">
+                  <a href="#romaji4" class="active indigo-text text-darken-4">Romaji Lyrics</a>
+                </li>
+                <li class="tab col s6">
+                  <a href="#english4" class="indigo-text text-darken-4">English Lyrics</a>
+                </li>
+              </ul>
+              <div id="story4" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Monster/Kaibutsu</p>
+                  <p class="flow-text white-text text-darken-4"> "Kaibutsu" is about a carnivore trying to coexist with herbivores in a cruel world, based on Jibun no Mune ni Jibun no Mimi o Oshi Atete (Beastars), written by the anime's writer Paru Itagaki.</p>
+              </div>
+              <div id="romaji4" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Kaibutsu</p>
+                  <p class="white-text">Ah, subarashiki     sekai ni kyou mo kanpai
+                    Machi ni tobikau waraigoe mo
+                    Mite minu furi shiteru dake no tsukuri mon sa
+                    Ki ga furesou da
+                    Kurakura suru hodo no ii nioi ga
+                    Tsun to sashita hana no oku
+                    Me wo samasu honnou no mama
+                    Kyou wa dare no ban da?
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Pre-Chorus]
+                    Kono sekai de nani ga dekiru no ka
+                    Boku ni wa nani ga dekiru no ka
+                    Tada sono makkuro na me kara
+                    Namida koboreochinai you ni
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Chorus]
+                    Ah, Negau mirai ni nando demo zutto
+                    Kuraitsuku
+                    Kono machigai darake no sekai no naka
+                    Kimi ni wa waratte hoshii kara
+                    Mou daremo kizutsukenai
+                    Tsuyoku tsuyoku naritain da yo
+                    Boku ga boku de irareru you ni
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Verse 2]
+                    Subarashiki sekai wa kyou mo antai
+                    Machi ni uzumaku warui hanashi mo
+                    Shiranai shiranai furi shite me wo sorashita
+                    Shouki no sata janai na
+                    Majime ni kikazatta koushin
+                    Narasu ashioto ga hazumu ikisaki wa
+                    Kienai kienai aji ga shimitsuiteiru
+                    Uragawa no sekai, ah
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Verse 3]
+                    Kiyoku tadashiku ikiru koto
+                    Daremo kanashimasezu ni ikiru koto
+                    Hamidasazu massugu ni ikiru koto
+                    Sore ga machigawanaide ikiru koto?
+                    Ari no mama ikiru koto ga seigi ka
+                    Damashidamashi ikiru no wa seigi ka
+                    Boku no aru beki sugata to wa nan da
+                    Hontou no boku wa nanimono nan da
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Break]
+                    Oshiete kure yo
+                    Oshietе kure yo
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Bridge]
+                    Kyou mo
+                    Kotae no nai sekai no naka dе
+                    Ah, negatterun da yo
+                    Bukiyou da keredo
+                    Itsu made mo kimi to tada
+                    Waratte itai kara
+                    Ah, haneru shinzou ga
+                    Karada yurashi sakebun da yo
+                    Ima koso ugokidase
+                    </p>
+                    <br>
+                    <p class="white-text">
+                    [Chorus]
+                    Ah, yowai jibun wo nando demo zutto
+                    Kuraitsukusu
+                    Kono machigai darake no sekai no naka
+                    Kimi ni wa waratte hoshii kara
+                    Mou daremo nakanai you
+                    Tsuyoku tsuyoku naritain da yo
+                    Boku ga boku de irareru you ni
+                    [Post-Chorus]
+                    Tada kimi wo mamoru sono tame ni
+                    Hashiru hashiru hashirun da yo
+                    Boku no naka no boku wo koeru
+                    </p>
+              </div>
+              <div id="english4" class="col s12">
+                  <p class="flow-text indigo-text text-darken-4">Monster</p>
+                  <p class="white-text">
+                  Today again, In this wonderful world, the sound of 'cheers!'
+                  And laughter flitting about this town
+                  Are all pretenses to fake how no one knows anything
+                  It drives me insane
+                  A tempting smell that makes me all dizzy
+                  Drives deep into the back of my nose
+                  And as my eyes and instincts snap awake
+                  I wonder, whose turn is it today?
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  In this world where anything is possible
+                  What could someone like me possibly do?
+                  Yet, so that those dark black eyes
+                  Don't fill with tears
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  Over and over again, I sink my teeth
+                  Into the future I wish for
+                  Because in this world riddled with mistakes
+                  I want to make sure you can smile
+                  I don't want to hurt anyone anymore
+                  And that's why I want to get stronger, even stronger
+                  So that I can stay myself
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  Today again, in this wonderful world, the tranquillity
+                  Mixing with the ugly rumors in this town
+                  Makes people go "No idea, no idea," while diverting their gazes
+                  It's all so crazy
+                  The parade is dressed up all seriously
+                  Footsteps beating as they bound toward their destination
+                  Which has a taste sunk into it that'll never, ever go away -
+                  It's the world of the other side
+                 </p>
+                 <br>
+                 <p class="white-text">
+                  To live a clean and tidy life
+                  To live without make anyone sad
+                  To live on the straight and narrow without standing out
+                  Is that how you live without making any mistakes?
+                  Is it right to live how you are
+                  Or is it right to live a deceitful lie
+                  Just what type of person should I try to be?
+                  Just what type of person am I really?
+                  Please, tell me
+                  I'm begging you to tell me
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  Today, too
+                  In this world that doesn't have any answers
+                  I'm praying and begging
+                  No matter how stupid that is
+                  Because I just want to always
+                  Stay smiling with you 'til the end
+                  My heart leaps
+                  As I yell, my body shaking
+                  Right now's the time to leap into action
+                  </p>
+                  <br>
+                  <p class="white-text">
+                  Over and over again, I sink my teeth
+                  Into my weakly self
+                  Because in this world riddled with mistakes
+                  I want to make sure you can smile
+                  I don't want to lose anyone anymore
+                  And that's why I want to get stronger, even stronger
+                  So that I can stay myself
+                  I just want to protect you - and that's why
+                  I'm running, running, running
+                  So that I can overcome the "me" inside myself
+                  </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+        <video class="responsive-video" controls>
+          <source src="video/kaibutsu.mp4">
+        </video>
+    </div>
+
+
+
+   
+        <footer class="page-footer grey darken-3">
+            <div class="container">
+              <div class="row">
+                <div class="col s12 l4 offset-l2">
+                  <div class="button hide-on-med-and-up">
+                    <a href="indexpt.html" class="btn darken-4">Home</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright grey darken-4">
+              <div class="container center-align">&copy; All rights reserved.</div>
+            </div>
+          </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      $('.sidenav').sidenav();
+      $('.tabs').tabs();
+      $('.scrollspy').scrollSpy();
+    });
+    </script>
+</body>
+</html>

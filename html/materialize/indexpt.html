@@ -1,0 +1,292 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>Yoasobi</title>
+
+    <style>
+        header {
+            background: url(img/banner.png);
+            background-position: center;
+            background-size: cover;
+            height: 85vh;
+            z-index: 1;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: background-color 0.5 ease;
+            margin-bottom: 0px;
+            background-color: #FF8B73;
+        }
+
+        @media screen and (max-width: 700px){
+            header{
+                min-height: 500px;
+                display: inline-block;
+            }
+        }
+        body {
+          margin: 0px;
+          background: #FF8B73;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+       .search-bar { 
+        width: 400px;
+        background: linear-gradient(to left, #FF9D89, #FFA896);
+        display: flex;
+        align-items: center;
+        border-radius: 60px;
+        padding: 10px 20px;
+        height: 40px;
+        transform: translate(0%, 35%);
+       }
+
+       .search-bar input {
+        background: black;
+        flex: 1;
+        border: 1;
+        outline: none;
+        padding: 24px 20px;
+        color: #FF795C;
+        
+       }
+        nav {
+            position: fixed;
+            z-index: 1;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background: linear-gradient(to left, #FF795C, #FF9D89, #FFA896, #FFBDAF);
+        }
+        nav ul li a {
+          color: blueviolet;
+        }
+        .sidenav {
+          width: 20%;
+        }
+
+        .image {
+            position: absolute;
+            align-items: center;
+            background-color: blueviolet;
+        }
+
+        .image img {
+            height: 50px;
+            width: 50px;
+            margin-left: 160px;
+            border-radius: 50%;
+            text-align: right;
+            margin-top: 7px;
+        }   
+
+        .section {
+            border-radius: 2%;
+        }
+
+        .card-header {
+          padding: 2px;
+          margin: 50px;
+          margin-left: 4px;
+          margin-top: 2px;
+        }
+
+        .card-content {
+          width: auto;
+        }
+
+        .card-content img {
+          width: 350px;
+          align-items: center;
+        }
+
+        .Biography {
+          margin: 1%;
+          margin-bottom: 0px;
+          /* margin-top: 35px; */
+          margin-left: 3px;
+        }
+
+        .card {
+          border-radius: 1%;
+          margin: 15px;
+          margin-left: 30px;
+          margin-bottom: 0px;
+          margin-top: 20px;
+          background: linear-gradient(to right, #FF795C, #FF9D89, #FF9D89, white);
+        }
+
+        .card-content1 img {
+          padding: 4px;
+          width: 439px;
+          overflow-x: hidden;
+        }
+
+
+        .video-img video {
+          position: absolute;
+          width: 100%;
+          z-index: -1;
+          transition: background-color 0.5 ease;
+        }
+
+        .btn {
+          border-radius: 27px;
+          margin: 10px;
+          padding: 1px;
+          transform: translate(120%, -40%);
+          width: 140px;
+          height: 38px;
+
+        }
+        footer {
+          background-color: #FF795C;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <nav class="nav-wrapper">
+          <div class="container">
+            <a href="https://www.youtube.com/@Ayase_YOASOBI" class="brand-logo indigo-text">YOASOBI</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="video.html">Videos</a></li>
+              <li><a href="https://www.instagram.com/yoasobi_staff_/" class="tooltipped btn-floating btn-small darken-4" data-position="bottom" data-tooltip="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+              <li><a href="https://twitter.com/YOASOBI_staff" class="tooltipped btn-floating btn-small darken-4" data-position="bottom" data-tooltip="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a></li>
+              <li><a href="https://www.youtube.com/@Ayase_YOASOBI" class="tooltipped btn-floating btn-small darken-4" data-position="bottom" data-tooltip="youtube">
+                <i class="fab fa-youtube"></i>
+              </a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!--Section Part-->
+
+      <section class="Biography">
+        <div class="col">
+            <div class="row">
+              <div class="grid-item">
+                <div class="card darken-4">
+                  <div class="card-content">
+                    <h1 class="card-header">YOASOBI Biography</h1>
+                    <p class="card-text">
+                      YOASOBI (stylized in all caps) is a Japanese music duo composed of vocaloid music producer Ayase and vocalist Ikura (幾田りら). The group has released four music videos, all of which are based on short stories posted on Monogatary, a website operated by Sony Music Japan, later also from various novels and book tie-ups.
+                      <p>
+                      The name "YOASOBI" originates from the Japanese word 夜遊び, meaning "nightlife". Ayase, who is a producer of the group said he named it as a wish that he could take on various playful challenges by comparing the appearance of acting as an individual to the appearance of daytime and the appearance of two people acting as YOASOBI as the appearance of the night.
+                      </p>
+                      <br>
+                      <p>
+                      The group has a slogan "novel into music" (小説を音楽にする, shōsetsu o ongaku ni suru).
+                      Yoasobi's musical style has been described as a mix of pop, rock, and electronic music; Ayase was influenced by '80s music, '90s music, and K-pop, while Ikura was influenced by Western music like Disney songs, folk, and country. Ayase named Exile, Sukima Switch, Kobukuro,[153] Radwimps, and Aiko, and Ikura cites Taylor Swift as each major music influence. Their music have been compared to other Japanese musical acts such as Yorushika and Zutomayo, which are also known for their Vocaloid roots and animated music videos. The three groups are collectively described by the neologism "Yakōsei" (夜好性, lit. "night-loving scene"), as all of them have the word "夜" (pronounced ya, yo or yoru; meaning "night") in their name.
+                      </p>
+                      <br>
+                      <p>
+                      Even though Yoasobi's songs are based on fictional stories, Ayase interprets and writes their songs reflecting on his own feelings and experiences.[157] He also usually titles the duo's song with "straightforward" word, e.g. "Gunjō", "Idol", and "Yūsha". Described by themselves as "DIY", "hands-on", and "handmade" styles, when writing music for the duo, He first creates a demo using a digital audio workstation on his laptop with Vocaloid voicebank, mostly Hatsune Miku, allowing him to avoid any distortion based on a human vocalist's interpretation, then records Ikura's vocals afterwards. Real Sound's Natsume Sogami described Yoasobi's music as "opposite" creating style comparing to other musicians and "derivative work".Pen's Hiroaki Nagahata wrote that the duo's song "reflect modern motifs, including negative things that no one would dare say in public."
+                      </p>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="video-img">
+        <video class="responsive-video hide-on-med-and-down" autoplay loop muted>
+          <source src="video/tracing-that-dream.mp4">
+        </video>
+        <div class="row">
+          <div class="col l4 offset-l2 push-l4">
+            <div class="grid-item">
+              <div class="card darken-4">
+                <div class="card-content1">
+                  <img src="img/Ikutalila-sketch.jpg" alt="" class="responsive-img materialboxed">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 l4 offset-l1 pull-l5">
+            <div class="grid-item">
+              <div class="card darken-4">
+                <div class="card-content">
+                  <h1 class="card-header">Lilas Ikuta</h1>
+                  <p class="card-text">
+                    Lilas Ikuta (幾田りら, Ikuta Rira, born September 25, 2000) is a Japanese singer and songwriter. She is best known as the vocalist of the duo Yoasobi with producer Ayase, under the stage name Ikura, and a former member of the cover group Plusonica. After numerous singles and extended plays, Ikuta released her debut studio album Sketch in March 2023 and peaked at number four on the Oricon Albums Chart.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      <div class="row">
+        <div class="col l4 offset-l2 push-l5">
+          <div class="grid-item">
+            <div class="card darken-4">
+              <div class="card-content1">
+                <img src="img/ayase1.webp" alt="" class="responsive-img materialboxed">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l4 offset-l2 pull-l5">
+          <div class="grid-item">
+            <div class="card darken-4">
+              <div class="card-content">
+                <h1 class="card-header">Ayase</h1>
+                <p class="card-text">
+                  Ayase (born April 4, 1994) is a Japanese musician, singer, lyricist, composer, arranger and record producer. He is best known as a Vocaloid producer and a composer and member of duo Yoasobi with vocalist Ikura. He also was a vocalist of the rock band Davinci from 2012 until its disbandment in 2020.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+
+    
+      <div class="button">
+        <a href="video.html" class="btn darken-4">Videos</a>
+      </div>
+
+        
+        <footer class="page-footer grey darken-3">
+            <div class="container">
+              <div class="row">
+                <div class="col s12 l4 offset-l2">
+                  <h5 class="white-text">Connect</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/YOASOBI_staff">Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/yoasobi_staff_/">Instagram</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/@Ayase_YOASOBI">Youtube</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright grey darken-4">
+              <div class="container center-align">&copy; All rights reserved.</div>
+            </div>
+          </footer>
+    
+    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+       $('.sidenav').sidenav();
+       $('.materialboxed').materialbox();
+       $('.tooltipped').tooltip();
+    });
+
+  </script>
+
+</body>
+</html>
